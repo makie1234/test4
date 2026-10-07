@@ -1,0 +1,1439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Achilles G. Arimao | Nursing Student & Creative</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700&family=Permanent+Marker&display=swap" rel="stylesheet">
+
+    <style>
+
+        /* =====================================================
+           GENERAL SETTINGS
+        ===================================================== */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        :root {
+            --navy: #050b18;
+            --navy-light: #0a1428;
+            --blue: #1268d8;
+            --blue-bright: #1e9bff;
+            --red: #e3262e;
+            --red-dark: #8e1017;
+            --gold: #ffc928;
+            --gold-dark: #d99f00;
+            --white: #f5f7fb;
+            --gray: #aab4c4;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--navy);
+            color: var(--white);
+            overflow-x: hidden;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        .container {
+            width: min(1150px, 90%);
+            margin: auto;
+        }
+
+
+        /* =====================================================
+           NAVIGATION
+        ===================================================== */
+
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 72px;
+            background: rgba(5, 11, 24, 0.92);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(255, 201, 40, 0.25);
+            z-index: 1000;
+        }
+
+        .nav-container {
+            width: min(1150px, 90%);
+            height: 100%;
+            margin: auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .logo-mark {
+            font-family: 'Permanent Marker', cursive;
+            font-size: 30px;
+            color: var(--gold);
+            transform: rotate(-5deg);
+        }
+
+        .logo-text strong {
+            display: block;
+            font-size: 15px;
+        }
+
+        .logo-text span {
+            color: var(--gray);
+            font-size: 10px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            font-size: 13px;
+            font-weight: 600;
+            transition: .3s;
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: var(--gold);
+        }
+
+        .nav-links a::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: -8px;
+            width: 0;
+            height: 2px;
+            background: var(--gold);
+            transition: .3s;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+
+        /* =====================================================
+           HERO
+        ===================================================== */
+
+        .hero {
+            min-height: 100vh;
+            padding-top: 72px;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+
+            background:
+                radial-gradient(circle at 80% 40%, rgba(227,38,46,.25), transparent 30%),
+                radial-gradient(circle at 20% 70%, rgba(18,104,216,.25), transparent 30%),
+                var(--navy);
+        }
+
+        /* Decorative red circle */
+
+        .hero::before {
+            content: "";
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            background: var(--red);
+            border-radius: 50%;
+            right: 5%;
+            top: 15%;
+            opacity: .18;
+            filter: blur(5px);
+        }
+
+        /* Blue glow */
+
+        .hero::after {
+            content: "";
+            position: absolute;
+            width: 400px;
+            height: 400px;
+            background: var(--blue);
+            border-radius: 50%;
+            left: -150px;
+            bottom: -150px;
+            opacity: .15;
+            filter: blur(20px);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            align-items: center;
+            gap: 50px;
+        }
+
+        .hero-small {
+            color: var(--gold);
+            font-weight: 700;
+            letter-spacing: 5px;
+            font-size: 13px;
+            margin-bottom: 15px;
+        }
+
+        .hero h1 {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: clamp(70px, 9vw, 120px);
+            line-height: .85;
+            letter-spacing: 2px;
+        }
+
+        .hero h1 span {
+            color: var(--gold);
+        }
+
+        .hero-subtitle {
+            margin-top: 25px;
+            font-size: 20px;
+            font-weight: 600;
+        }
+
+        .hero-description {
+            color: var(--gray);
+            margin-top: 15px;
+            line-height: 1.8;
+            max-width: 500px;
+        }
+
+        .buttons {
+            margin-top: 30px;
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 13px 25px;
+            border: 1px solid var(--gold);
+            font-size: 13px;
+            font-weight: 700;
+            transition: .3s;
+        }
+
+        .btn-primary {
+            background: var(--gold);
+            color: #111;
+        }
+
+        .btn:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 25px rgba(255,201,40,.2);
+        }
+
+        .btn-secondary {
+            color: white;
+        }
+
+        .hero-image {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-image img {
+            width: 100%;
+            max-height: 600px;
+            object-fit: cover;
+            border-radius: 4px;
+            border: 1px solid rgba(255,201,40,.5);
+            box-shadow:
+                20px 20px 0 rgba(227,38,46,.25),
+                -15px -15px 0 rgba(18,104,216,.15);
+        }
+
+
+        /* =====================================================
+           SECTION SETTINGS
+        ===================================================== */
+
+        section {
+            padding: 100px 0;
+            position: relative;
+        }
+
+        .section-label {
+            color: var(--gold);
+            letter-spacing: 4px;
+            font-size: 12px;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .section-title {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 60px;
+            line-height: 1;
+        }
+
+        .section-title span {
+            color: var(--gold);
+        }
+
+
+        /* =====================================================
+           ABOUT
+        ===================================================== */
+
+        .about {
+            background:
+                linear-gradient(135deg, rgba(18,104,216,.1), transparent),
+                var(--navy-light);
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: .8fr 1.2fr;
+            gap: 70px;
+            align-items: center;
+        }
+
+        .about-image img {
+            height: 500px;
+            width: 100%;
+            object-fit: cover;
+            border: 2px solid var(--blue);
+            box-shadow: 15px 15px 0 rgba(227,38,46,.3);
+        }
+
+        .about-text p {
+            color: var(--gray);
+            line-height: 1.9;
+            margin: 25px 0;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+            margin-top: 30px;
+        }
+
+        .info-box {
+            background: rgba(255,255,255,.03);
+            border-left: 3px solid var(--gold);
+            padding: 18px;
+        }
+
+        .info-box small {
+            display: block;
+            color: var(--gold);
+            font-size: 10px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 5px;
+        }
+
+        .info-box strong {
+            font-size: 14px;
+        }
+
+
+        /* =====================================================
+           EDUCATION
+        ===================================================== */
+
+        .education-card {
+            margin-top: 50px;
+            padding: 35px;
+            background: linear-gradient(135deg, #0b1931, #07101e);
+            border: 1px solid rgba(255,201,40,.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .education-card::before {
+            content: "EDUCATION";
+            position: absolute;
+            right: -20px;
+            top: 20px;
+            font-family: 'Bebas Neue';
+            font-size: 90px;
+            color: rgba(255,255,255,.025);
+        }
+
+        .education-card h3 {
+            color: var(--gold);
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .education-card p {
+            color: var(--gray);
+            line-height: 1.8;
+        }
+
+
+        /* =====================================================
+           HOBBIES
+        ===================================================== */
+
+        .hobbies {
+            background: var(--navy);
+        }
+
+        .hobby-grid {
+            margin-top: 50px;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .hobby-card {
+            min-height: 300px;
+            padding: 25px;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(255,255,255,.1);
+            background: #091325;
+            transition: .4s;
+        }
+
+        .hobby-card:hover {
+            transform: translateY(-8px);
+            border-color: var(--gold);
+        }
+
+        .hobby-card img {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: .35;
+            transition: .4s;
+        }
+
+        .hobby-card:hover img {
+            transform: scale(1.08);
+            opacity: .5;
+        }
+
+        .hobby-content {
+            position: absolute;
+            bottom: 25px;
+            left: 25px;
+            z-index: 2;
+        }
+
+        .hobby-number {
+            color: var(--gold);
+            font-family: 'Bebas Neue';
+            font-size: 22px;
+        }
+
+        .hobby-card h3 {
+            font-family: 'Bebas Neue';
+            font-size: 38px;
+            margin: 5px 0 10px;
+        }
+
+        .hobby-card p {
+            color: #ddd;
+            font-size: 12px;
+            line-height: 1.7;
+        }
+
+
+        /* =====================================================
+           SPORTS
+        ===================================================== */
+
+        .sports-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        .tag {
+            border: 1px solid rgba(255,201,40,.5);
+            padding: 8px 14px;
+            font-size: 11px;
+            color: var(--gold);
+        }
+
+
+        /* =====================================================
+           MULTIMEDIA / JOURNALISM
+        ===================================================== */
+
+        .creative {
+            background: var(--navy-light);
+        }
+
+        .creative-grid {
+            margin-top: 50px;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+        }
+
+        .creative-card {
+            padding: 35px;
+            background: #07101e;
+            border: 1px solid rgba(255,255,255,.1);
+            transition: .3s;
+        }
+
+        .creative-card:hover {
+            border-color: var(--red);
+            transform: translateY(-5px);
+        }
+
+        .creative-card h3 {
+            font-family: 'Bebas Neue';
+            font-size: 40px;
+            color: var(--gold);
+        }
+
+        .creative-card p {
+            color: var(--gray);
+            line-height: 1.8;
+            margin: 15px 0;
+        }
+
+        .creative-list {
+            list-style: none;
+        }
+
+        .creative-list li {
+            padding: 10px 0;
+            border-bottom: 1px solid rgba(255,255,255,.07);
+            font-size: 13px;
+        }
+
+        .creative-list li::before {
+            content: "✦";
+            color: var(--red);
+            margin-right: 10px;
+        }
+
+
+        /* =====================================================
+           FAVORITES
+        ===================================================== */
+
+        .favorite {
+            text-align: center;
+            background:
+                radial-gradient(circle, rgba(227,38,46,.15), transparent 40%),
+                var(--navy);
+        }
+
+        .food {
+            margin: 40px auto 0;
+            max-width: 500px;
+            padding: 35px;
+            border: 1px solid var(--gold);
+            background: rgba(255,201,40,.03);
+        }
+
+        .food-icon {
+            font-size: 50px;
+            margin-bottom: 15px;
+        }
+
+        .food h3 {
+            font-family: 'Bebas Neue';
+            font-size: 40px;
+            color: var(--gold);
+        }
+
+        .food p {
+            color: var(--gray);
+            margin-top: 10px;
+        }
+
+
+        /* =====================================================
+           GALLERY
+        ===================================================== */
+
+        .gallery {
+            background: var(--navy-light);
+        }
+
+        .gallery-grid {
+            margin-top: 50px;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-auto-rows: 230px;
+            gap: 12px;
+        }
+
+        .gallery-item {
+            overflow: hidden;
+            border: 1px solid rgba(255,255,255,.1);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: .5s;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .gallery-item.large {
+            grid-row: span 2;
+        }
+
+
+        /* =====================================================
+           FOOTER
+        ===================================================== */
+
+        footer {
+            padding: 60px 0 30px;
+            background: #030812;
+            border-top: 1px solid rgba(255,201,40,.3);
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .footer-title {
+            font-family: 'Bebas Neue';
+            font-size: 55px;
+        }
+
+        .footer-title span {
+            color: var(--gold);
+        }
+
+        .footer-text {
+            color: var(--gray);
+            max-width: 500px;
+            line-height: 1.7;
+            margin-top: 10px;
+        }
+
+        .socials {
+            display: flex;
+            gap: 10px;
+        }
+
+        .socials a {
+            width: 45px;
+            height: 45px;
+            display: grid;
+            place-items: center;
+            border: 1px solid rgba(255,201,40,.4);
+            color: var(--gold);
+            transition: .3s;
+        }
+
+        .socials a:hover {
+            background: var(--gold);
+            color: #111;
+        }
+
+        .copyright {
+            margin-top: 50px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,.05);
+            color: #596477;
+            font-size: 11px;
+            text-align: center;
+        }
+
+
+        /* =====================================================
+           ANIME / BRUSH DECORATIONS
+        ===================================================== */
+
+        .brush-red {
+            position: absolute;
+            width: 180px;
+            height: 25px;
+            background: var(--red);
+            transform: rotate(-8deg);
+            opacity: .7;
+            z-index: 1;
+        }
+
+        .brush-blue {
+            position: absolute;
+            width: 220px;
+            height: 18px;
+            background: var(--blue);
+            transform: rotate(5deg);
+            opacity: .6;
+            z-index: 1;
+        }
+
+
+        /* =====================================================
+           MOBILE
+        ===================================================== */
+
+        @media (max-width: 850px) {
+
+            .nav-links {
+                display: none;
+            }
+
+            .hero-content,
+            .about-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero {
+                padding-top: 120px;
+                padding-bottom: 80px;
+            }
+
+            .hero h1 {
+                font-size: 75px;
+            }
+
+            .hero-image {
+                order: -1;
+            }
+
+            .hero-image img {
+                max-height: 450px;
+            }
+
+            .hobby-grid,
+            .creative-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .gallery-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .footer-content {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .section-title {
+                font-size: 48px;
+            }
+        }
+
+        @media (max-width: 500px) {
+
+            .hero h1 {
+                font-size: 65px;
+            }
+
+            .info-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .gallery-item.large {
+                grid-row: span 1;
+            }
+
+            section {
+                padding: 75px 0;
+            }
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+
+<!-- =========================================================
+     NAVIGATION
+========================================================= -->
+
+<nav>
+    <div class="nav-container">
+
+        <a href="#home" class="logo">
+
+            <div class="logo-mark">
+                AA
+            </div>
+
+            <div class="logo-text">
+                <strong>Achilles Arimao</strong>
+                <span>NURSING • JOURNALISM • MULTIMEDIA</span>
+            </div>
+
+        </a>
+
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#hobbies">Hobbies</a></li>
+            <li><a href="#creative">Creative</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+        </ul>
+
+    </div>
+</nav>
+
+
+<!-- =========================================================
+     HERO
+========================================================= -->
+
+<section class="hero" id="home">
+
+    <div class="brush-red" style="top: 180px; left: -40px;"></div>
+    <div class="brush-blue" style="bottom: 100px; right: -50px;"></div>
+
+    <div class="container hero-content">
+
+        <div>
+
+            <div class="hero-small">
+                HELLO, I'M
+            </div>
+
+            <h1>
+                ACHILLES<br>
+                <span>ARIMAO</span>
+            </h1>
+
+            <div class="hero-subtitle">
+                4th Year Nursing Student
+            </div>
+
+            <p class="hero-description">
+                A nursing student from Mindanao State University –
+                Iligan Institute of Technology with a passion for
+                sports, journalism, photography, videography,
+                and creative storytelling.
+            </p>
+
+            <div class="buttons">
+
+                <a href="#about" class="btn btn-primary">
+                    DISCOVER MY STORY →
+                </a>
+
+                <a href="#gallery" class="btn btn-secondary">
+                    VIEW GALLERY
+                </a>
+
+            </div>
+
+        </div>
+
+
+                <div class="hero-image">
+
+            <img
+                src="images/test.jpg"
+                alt="Achilles Arimao portrait"
+            >
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     ABOUT
+========================================================= -->
+
+<section class="about" id="about">
+
+    <div class="container about-grid">
+
+                <div class="about-image">
+
+            <img
+                src="images/about.jpg"
+                alt="Achilles Arimao"
+            >
+
+        </div>
+
+
+        <div class="about-text">
+
+            <div class="section-label">
+                ABOUT ME
+            </div>
+
+            <h2 class="section-title">
+                WHO <span>AM I?</span>
+            </h2>
+
+            <p>
+                Hi! I'm <strong>Achilles G. Arimao</strong>, a
+                22-year-old fourth-year nursing student from
+                Mindanao State University – Iligan Institute of
+                Technology.
+            </p>
+
+            <p>
+                Beyond nursing, I enjoy exploring the world through
+                sports, journalism, photography, videography, and
+                other forms of multimedia storytelling.
+            </p>
+
+
+            <div class="info-grid">
+
+                <div class="info-box">
+                    <small>Name</small>
+                    <strong>Achilles G. Arimao</strong>
+                </div>
+
+                <div class="info-box">
+                    <small>Age</small>
+                    <strong>22 Years Old</strong>
+                </div>
+
+                <div class="info-box">
+                    <small>Birthday</small>
+                    <strong>May 28, 2004</strong>
+                </div>
+
+                <div class="info-box">
+                    <small>Field</small>
+                    <strong>Nursing</strong>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- EDUCATION -->
+
+    <div class="container">
+
+        <div class="education-card">
+
+            <h3>
+                🎓 Mindanao State University –
+                Iligan Institute of Technology
+            </h3>
+
+            <p>
+                Bachelor of Science in Nursing
+                <br>
+                <strong>4th Year Student</strong>
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     HOBBIES
+========================================================= -->
+
+<section class="hobbies" id="hobbies">
+
+    <div class="container">
+
+        <div class="section-label">
+            BEYOND NURSING
+        </div>
+
+        <h2 class="section-title">
+            MY <span>PASSIONS</span>
+        </h2>
+
+
+        <div class="hobby-grid">
+
+
+            <!-- SPORTS -->
+
+            <div class="hobby-card">
+
+                                <img
+                    src="images/sports.jpg"
+                    alt="Sports"
+                >
+
+                <div class="hobby-content">
+
+                    <div class="hobby-number">
+                        01
+                    </div>
+
+                    <h3>
+                        SPORTS
+                    </h3>
+
+                    <div class="sports-list">
+
+                        <span class="tag">Badminton</span>
+                        <span class="tag">Soccer</span>
+                        <span class="tag">Volleyball</span>
+                        <span class="tag">Pickleball</span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- JOURNALISM -->
+
+            <div class="hobby-card">
+
+                                <img
+                    src="images/journalism.jpg"
+                    alt="Journalism"
+                >
+
+                <div class="hobby-content">
+
+                    <div class="hobby-number">
+                        02
+                    </div>
+
+                    <h3>
+                        JOURNALISM
+                    </h3>
+
+                    <p>
+                        Photojournalism<br>
+                        News Writing<br>
+                        Sports Writing
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- MULTIMEDIA -->
+
+            <div class="hobby-card">
+
+                                <img
+                    src="images/senatorst.jpg"
+                    alt="Multimedia"
+                >
+
+                <div class="hobby-content">
+
+                    <div class="hobby-number">
+                        03
+                    </div>
+
+                    <h3>
+                        MULTIMEDIA
+                    </h3>
+
+                    <p>
+                        Photography<br>
+                        Videography<br>
+                        Directing
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     CREATIVE SKILLS
+========================================================= -->
+
+<section class="creative" id="creative">
+
+    <div class="container">
+
+        <div class="section-label">
+            CREATIVE SIDE
+        </div>
+
+        <h2 class="section-title">
+            STORYTELLING <span>THROUGH</span> MEDIA
+        </h2>
+
+
+        <div class="creative-grid">
+
+
+            <div class="creative-card">
+
+                <h3>
+                    JOURNALISM
+                </h3>
+
+                <p>
+                    Telling stories through words and images,
+                    capturing events, people, and moments
+                    that deserve to be remembered.
+                </p>
+
+                <ul class="creative-list">
+
+                    <li>
+                        Photojournalism
+                    </li>
+
+                    <li>
+                        News Writing
+                    </li>
+
+                    <li>
+                        Sports Writing
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+            <div class="creative-card">
+
+                <h3>
+                    MULTIMEDIA
+                </h3>
+
+                <p>
+                    Exploring visual storytelling through
+                    cameras, video production, and creative
+                    direction.
+                </p>
+
+                <ul class="creative-list">
+
+                    <li>
+                        Photography
+                    </li>
+
+                    <li>
+                        Videography
+                    </li>
+
+                    <li>
+                        Directing
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     FAVORITE FOOD
+========================================================= -->
+
+<section class="favorite">
+
+    <div class="container">
+
+        <div class="section-label">
+            A LITTLE ABOUT MY TASTE
+        </div>
+
+        <h2 class="section-title">
+            FAVORITE <span>FOOD</span>
+        </h2>
+
+        <div class="food">
+
+            <div class="food-icon">
+                🍕 🍔
+            </div>
+
+            <h3>
+                PIZZA & BURGERS
+            </h3>
+
+            <p>
+                Simple. Delicious. Always a good choice.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     PHOTO GALLERY
+========================================================= -->
+
+<section class="gallery" id="gallery">
+
+    <div class="container">
+
+        <div class="section-label">
+            MY WORLD
+        </div>
+
+        <h2 class="section-title">
+            PHOTO <span>GALLERY</span>
+        </h2>
+
+
+        <div class="gallery-grid">
+
+
+            
+            <div class="gallery-item large">
+
+                <img
+                    src="images/badminton.jpg"
+                    alt="Achilles gallery photo"
+                >
+
+            </div>
+
+
+            <div class="gallery-item">
+
+                <img
+                    src="images/posing.jpg"
+                    alt="Achilles gallery photo"
+                >
+
+            </div>
+
+
+            <div class="gallery-item">
+
+                <img
+                    src="images/posing 3.jpg"
+                    alt="Achilles gallery photo"
+                >
+
+            </div>
+
+
+            <div class="gallery-item">
+
+                <img
+                    src="images/posing2.jpg"
+                    alt="Achilles gallery photo"
+                >
+
+            </div>
+
+
+            <div class="gallery-item">
+
+                <img
+                    src="images/cert.jpg"
+                    alt="Achilles gallery photo"
+                >
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     FOOTER
+========================================================= -->
+
+<footer>
+
+    <div class="container">
+
+        <div class="footer-content">
+
+            <div>
+
+                <div class="section-label">
+                    THANKS FOR VISITING
+                </div>
+
+                <h2 class="footer-title">
+                    ACHILLES <span>ARIMAO</span>
+                </h2>
+
+                <p class="footer-text">
+                    Nursing student • Sports enthusiast •
+                    Journalist • Photographer • Videographer
+                </p>
+
+            </div>
+
+
+            
+
+            <div class="socials">
+
+                <a href="https://www.facebook.com/achilles.gica.5/" title="Facebook">
+                    f
+                </a>
+
+                <a href="https://www.instagram.com/achillesgics?stkn=MWlkenIxaGNjZzR1bQ==" title="Instagram">
+                    ◎
+                </a>
+
+                <a href="achilles.arimao@g.msuiit.edu.ph" title="Email">
+                    @
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="copyright">
+
+            © 2026 Achilles G. Arimao.
+            All Rights Reserved.
+
+        </div>
+
+    </div>
+
+</footer>
+
+
+
+<!-- =========================================================
+     SIMPLE JAVASCRIPT
+========================================================= -->
+
+<script>
+
+    // Smooth scrolling for navigation
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+
+        anchor.addEventListener('click', function(e) {
+
+            e.preventDefault();
+
+            const target = document.querySelector(
+                this.getAttribute('href')
+            );
+
+            if (target) {
+
+                target.scrollIntoView({
+                    behavior: 'smooth'
+                });
+
+            }
+
+        });
+
+    });
+
+
+    // Small scroll animation
+
+    const cards = document.querySelectorAll(
+        '.hobby-card, .creative-card, .education-card'
+    );
+
+    const observer = new IntersectionObserver(
+        entries => {
+
+            entries.forEach(entry => {
+
+                if (entry.isIntersecting) {
+
+                    entry.target.style.opacity = "1";
+                    entry.target.style.transform =
+                        "translateY(0)";
+
+                }
+
+            });
+
+        },
+        {
+            threshold: 0.15
+        }
+    );
+
+
+    cards.forEach(card => {
+
+        card.style.opacity = "0";
+        card.style.transform = "translateY(30px)";
+        card.style.transition = "all .7s ease";
+
+        observer.observe(card);
+
+    });
+
+</script>
+
+</body>
+</html>
